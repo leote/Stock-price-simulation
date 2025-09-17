@@ -19,13 +19,14 @@ def refresh_simulation():
     
     final_return = (prices[-1] - 100) / 100 * 100 # Calculate actual return percentage
     plt.plot(prices, 'blue')
-    plt.axhline(y=100, color='red', linestyle='--') # baseline / start price value
+    plt.axhline(y=100, color='red', linestyle='--') # baseline / start price value line
     plt.title(f"Stock Price\n{edge}% Total Edge                  Return: {final_return:.1f}%")
     plt.xlabel("no. of price changes")
     plt.ylabel("Price ")
     plt.draw()
 
 fig, ax = plt.subplots(figsize=(10, 5))
-fig.canvas.mpl_connect('key_press_event', lambda event: refresh_simulation() if event.key == 'r' else None) # press 'R' to refresh
+fig.canvas.mpl_connect('key_press_event', lambda event: refresh_simulation() if event.key == 'r' else None) # press R to refresh
 refresh_simulation()
+
 plt.show()
