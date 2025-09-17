@@ -1,1 +1,1 @@
-press r to refresh
+press r to refresh graph
